@@ -1,2 +1,2 @@
 # Project-Website
-A project website i am working on ahaha
+A project website I worked upon. I could not upload the videos folder cuz its too big so...
