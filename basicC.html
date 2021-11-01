@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Concepts</title>
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="icon" href="img/favicon.ico">
+  </head>
+  <body>
+
+    <header>
+      <a href="#" class="brand">AVIANIC</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="#">Home</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home">
+      <video class="video-slide active" src="Videos/" autoplay muted loop></video>
+      <video class="video-slide" src="Videos/AirFoilTech.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="Videos/Flaps_TakeOff.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="Videos/Thrust and Turbo Fan.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="Videos/flightnavigation.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="Videos/landing.mp4" autoplay muted loop></video>
+      <div class="content active">
+        <h1>Welcome to<br><span>Basic Concepts</span></h1>
+        <p>We would like to teach children a few basic concepts<br> regarding flights and the mechanisms behind it.</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Airfoil<br> <span>Technology</span></h1>
+        
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Flaps<br> <span>Takeoff</span></h1>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Thrust and<br><span> Turbo Fan</span></h1>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Flight<br><span>Navigation</span></h1>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Flight<br><span>Landing</span></h1>
+        <a href="#">Read More</a>
+      </div>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+  </body>
+</html>
